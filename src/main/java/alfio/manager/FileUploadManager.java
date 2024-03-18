@@ -45,13 +45,13 @@ import java.util.*;
 @Transactional
 public class FileUploadManager {
 
-    static final int IMAGE_THUMB_MAX_WIDTH_PX = 300;
-    static final int IMAGE_THUMB_MAX_HEIGHT_PX = 200;
+    static final int IMAGE_THUMB_MAX_WIDTH_PX = 1200;
+    static final int IMAGE_THUMB_MAX_HEIGHT_PX = 1200;
     private static final Logger log = LoggerFactory.getLogger(FileUploadManager.class);
     /**
-     * Maximum allowed file size is 200kb
+     * Maximum allowed file size is 4 MB
      */
-    private static final int MAXIMUM_ALLOWED_SIZE = 1024 * 200;
+    private static final int MAXIMUM_ALLOWED_SIZE = 1024 * 4000;
     private static final MimeType IMAGE_TYPE = MimeType.valueOf("image/*");
     private final FileUploadRepository repository;
     private final Cache<String, File> cache = Caffeine.newBuilder()
